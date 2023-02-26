@@ -31,6 +31,7 @@
 			}
 
 			request.open("GET", url + param, true);
+			request.setRequestHeader('API-Key', '91a43543c872f77aa1c835ee01996c96');
 			request.send(null);
 		}
 
@@ -58,6 +59,7 @@
 
 			request.open("POST", url, true);
 			request.setRequestHeader('Content-Type', 'application/json');
+			request.setRequestHeader('API-Key', '91a43543c872f77aa1c835ee01996c96');
 			request.send(postData);
 		}
 	</script>
