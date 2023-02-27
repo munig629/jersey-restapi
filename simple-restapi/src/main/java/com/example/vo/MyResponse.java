@@ -1,4 +1,4 @@
-package com.example;
+package com.example.vo;
 
 import java.util.List;
 
