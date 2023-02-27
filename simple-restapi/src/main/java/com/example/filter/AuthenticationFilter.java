@@ -21,6 +21,8 @@ public class AuthenticationFilter implements ContainerRequestFilter {
 	@Override
 	public void filter(ContainerRequestContext requestContext) throws IOException {
 
+//		System.out.println("AuthenticationFilter start");
+		
 		// Extract and validate the API key from the request
 		String apiKey = requestContext.getHeaderString("API-Key");
 
