@@ -1,4 +1,4 @@
-package com.example;
+package com.example.vo;
 
 /**
  * Request class of MyResource

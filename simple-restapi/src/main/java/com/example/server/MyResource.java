@@ -1,4 +1,4 @@
-package com.example;
+package com.example.server;
 
 import java.util.ArrayList;
 
@@ -9,6 +9,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
+
+import com.example.vo.MyRequest;
+import com.example.vo.MyResponse;
 
 /**
  * Root resource (exposed at "myresource" path)
