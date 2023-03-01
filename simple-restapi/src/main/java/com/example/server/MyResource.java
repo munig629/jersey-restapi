@@ -2,37 +2,33 @@ package com.example.server;
 
 import java.util.ArrayList;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.UriInfo;
 
-import com.example.vo.MyRequest;
-import com.example.vo.MyResponse;
+import com.example.common.ApiBase;
 
 /**
  * Root resource (exposed at "myresource" path)
  */
 @Path("myresource")
-public class MyResource {
+public class MyResource extends ApiBase<MyRequest, MyResponse> {
+
+	@Context
+	UriInfo uriInfo;
 
 	/**
 	 * Method handling HTTP GET requests. The returned object will be sent to the
 	 * client as "application/json" media type.
 	 * 
-	 * @param id
 	 * @return MyResponse
 	 */
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	public MyResponse get(@QueryParam("id") int id) {
+	@Override
+	public MyResponse get() {
 
 		MyResponse res = new MyResponse();
 		res.statusCode = 0;
-		res.resultData = "GET：" + id;
+		res.resultData = "GET：id=" + uriInfo.getQueryParameters().get("id");
 
 		return res;
 	}
@@ -41,12 +37,10 @@ public class MyResource {
 	 * Method handling HTTP POST requests. The returned object will be sent to the
 	 * client as "application/json" media type.
 	 * 
-	 * @param req
+	 * @param MyRequest
 	 * @return MyResponse
 	 */
-	@POST
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
+	@Override
 	public MyResponse post(MyRequest req) {
 
 		MyResponse res = new MyResponse();

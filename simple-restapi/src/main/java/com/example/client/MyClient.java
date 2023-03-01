@@ -10,15 +10,15 @@ import javax.ws.rs.core.MediaType;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.ClientProperties;
 
+import com.example.server.MyRequest;
 import com.example.server.MyResource;
-import com.example.vo.MyRequest;
-import com.example.vo.MyResponse;
+import com.example.server.MyResponse;
 
 import dev.failsafe.Failsafe;
 import dev.failsafe.RetryPolicy;
 
 /**
- * Jersey Client API Sample
+ * JAX-RS Client API Sample
  */
 public class MyClient {
 
